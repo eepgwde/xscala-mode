@@ -141,6 +141,9 @@ gu  ([xscala find-interp]    '(menu-item "Find interpreter"         xscala-find-
    ((xscala-mode-ui:key "m f")  'xscala-mark-forward)
    ((xscala-mode-ui:key "p m")  'xscala-eval-paste-mark-step)
    ((xscala-mode-ui:key "m x")  'xscala-eval-mark-step)
+   ([(control c)(control c)]   'xscala-eval-mark-step)
+   ([(control c)(control e)]   'xscala-eval-step)
+   ([(control c)(control r)]   'xscala-mark-backward)
 			        
    ((xscala-mode-ui:key "x j")   'comment-region)
    )

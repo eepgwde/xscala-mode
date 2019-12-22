@@ -114,19 +114,24 @@ See the command `xscala-mode' for more information on this mode."
 	      (add-hook 'change-major-mode-hook
 		              (lambda () (xscala-minor-mode -1))
 		              nil t)
-        ;;
+
+        ;; load the keys
         (use-local-map xscala-mode-map)
+
+        ;; These will be local to the file and we take the defaults.
         (make-local-variable 'xscala-std-options)
         (make-local-variable 'xscala-spark-options)
+        ;; make a copy
+        (make-local-variable 'xscala-interpreter)
+        (setq xscala-interpreter xscala-std-interpreter)
 
-        ;;
+        ;; These might be specific to the style in the file.
         (make-local-variable 'xscala-edit-mark)
         (make-local-variable 'xscala-edit-mark-re)
-
+ 
         (if (not xscala-edit-mark-re) 
             (setq xscala-edit-mark-re (concat "^" outline-regexp)) )
 
-        (setq xscala-interpreter xscala-std-interpreter)
         )
     ;; Cause use of ellipses for invisible text.
     ;; When turning off xscala mode, get rid of any xscala hiding.
