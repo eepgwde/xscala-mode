@@ -1,0 +1,11 @@
+weaves
+
+There's a problem with comint send buffer after a paste. I have to send eof twice.
+
+I've added some short keystrokes to the minor mode. C-c C-c and C-c C-e to make stepping
+easier.
+
+There's an issue with two menus appearing. I managed to remove the second XScala, but
+the inferior mode menu still appears twice.
+
+I haven't put the spacemacs wrapper in.
