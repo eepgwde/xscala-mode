@@ -5,7 +5,7 @@ In Emacs, this file should be read in -*- Outline -*- mode.
 I now use scala-lsp and I use this minor-mode to interact with an inferior mode
 that interacts with an sbt console. It gives you an XScala menu.
 
-I use projectile in spacemacs, but you need to do customize.
+I use projectile in spacemacs, but you need to do some customization.
 
 You should customize the xscala settings so that xscala-inf-buffer-name is '*compilation*'
 for projectile.
@@ -17,17 +17,18 @@ and change its mode to xscala-inf-mode.
 You can then use the execute and paste commands in the XScala menu.
 
 The minor-mode relies upon have "marks" within the scala file. If you invoke an 
-outline-minor-mode and set outline-regexp to be the same as xscala-edit-mark-re
-this is the value I use "// [\\*]+"
-
-You can then nagivate with outline and the rest.
+outline-minor-mode and set outline-regexp to be the same as xscala-edit-mark-re 
+as local variables, then this value "// [\\*]+" will navigate using outline mode
+and can show and hide.
 
 I have a spacemacs wrapper for this, it does this to make sure it is invoked:
 (add-hook 'scala-mode-hook 'xscala-minor-mode)
 
-This all gives your spacemacs scala environment the feel of a jupyter notebook.
+All of this gives your spacemacs scala environment the feel of a jupyter notebook.
 
 If you need more help, I can make my more of my system available.
+
+The following comments are from the original authors of the scala-mode-el package for emacs.
 
 * Introduction
 
