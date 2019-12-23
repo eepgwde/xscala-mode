@@ -298,6 +298,18 @@ def foo =
   (next-line)
   (re-search-forward xscala-edit-mark-re))
 
+;;; Very useful. 
+;;;  - mark where I am
+;;;  - go back a mark
+;;;  - execute to next mark
+;;;  - go back to where I was
+(defun xscala-eval-marks ()
+  (interactive)
+  (save-excursion
+    (xscala-mark-backward)
+    (xscala-eval-mark) ) )
+
+
 ;;;###autoload
 (defun xscala-eval-buffer ()
   "Send whole buffer to Scala interpreter."
